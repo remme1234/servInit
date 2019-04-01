@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="egovframework.example.welcomeWeb.service.impl.WelcomeWebMapper">
+
+	<select id="selectWelcomeWebServiceList" resultType="egovMap">
+		SELECT SEQ_NO,
+			   USER_NAME,
+			   AGE,
+               COUNTRY,
+               ETC
+  		  FROM WELCOME_WEB
+	</select>
+	
+	<select id="selectOnTheDeskList" parameterType="Map" resultType="egovMap">
+		SELECT SEQ_NO,
+			   USER_NAME,
+			   AGE,
+               COUNTRY,
+               ETC
+  		  FROM WELCOME_WEB
+		 WHERE SEQ_NO = 3
+	</select>
+	
+	<select id="selectZaigenList" parameterType="Map" resultType="egovMap">
+		SELECT SEQ_NO,
+			   USER_NAME,
+			   AGE,
+               COUNTRY,
+               ETC
+  		  FROM WELCOME_WEB
+		 WHERE COUNTRY = '한국'
+	</select>
+		
+	<select id="selectPenziList" parameterType="egovMap" resultType="egovMap">
+		SELECT SEQ_NO,
+			   USER_NAME,
+			   AGE,
+               COUNTRY,
+               ETC
+  		  FROM WELCOME_WEB
+ 		 WHERE AGE = 12
+	</select>
+	
+	<select id="selectSonySpeakerList" parameterType="egovMap" resultType="Map">
+		SELECT SEQ_NO,
+			   USER_NAME,
+			   AGE,
+               COUNTRY,
+               ETC
+  		  FROM WELCOME_WEB
+  		 WHERE ETC = '아자!'
+	</select>
+	
+	<select id="selectIkeaLampList" parameterType="egovMap" resultType="Map">
+		SELECT SEQ_NO,
+			   USER_NAME,
+			   AGE,
+               COUNTRY,
+               ETC
+  		  FROM WELCOME_WEB
+	     WHERE USER_NAME != '한큐'
+	</select>
+	
+	<select id="selectjetStreamList" parameterType="egovMap" resultType="egovMap">
+		SELECT SEQ_NO,
+			   USER_NAME,
+			   AGE,
+               COUNTRY,
+               ETC
+  		  FROM WELCOME_WEB
+ 		 WHERE AGE >= 15
+	</select>
+	
+	<select id="selectnashvilleCastList" parameterType="WelcomeWebVO" resultType="egovMap">
+		SELECT SEQ_NO,
+			   USER_NAME,
+			   AGE,
+               COUNTRY,
+               ETC
+  		  FROM WELCOME_WEB
+ 		 WHERE COUNTRY = '러시아'
+	</select>
+	
+	<select id="selectTuscanitList" parameterType="egovMap" resultType="egovMap">
+		SELECT SEQ_NO,
+			   USER_NAME,
+			   AGE,
+               COUNTRY,
+               ETC
+  		  FROM WELCOME_WEB
+ 		 <![CDATA[WHERE SEQ_NO >= 3 AND AGE <= 15]]>
+	</select>
+	
+	<select id="selectSmileAgaintList" parameterType="Map" resultType="egovMap">
+		SELECT SEQ_NO,
+			   USER_NAME,
+			   AGE,
+               COUNTRY,
+               ETC
+  		  FROM WELCOME_WEB
+ 		 WHERE COUNTRY = '한국' OR COUNTRY = '러시아'
+	</select>
+	
+	<select id="selectSalesMantList" parameterType="WelcomeWebVO" resultType="egovMap">
+		SELECT SEQ_NO,
+			   USER_NAME,
+			   AGE,
+               COUNTRY,
+               ETC
+  		  FROM WELCOME_WEB
+ 		 WHERE USER_NAME Like '뿌꾸%'
+	</select>
+	
+	<select id="selecticeAmericanoList" parameterType="WelcomeWebVO" resultType="egovMap">
+		SELECT SEQ_NO,
+			   USER_NAME,
+			   AGE,
+               COUNTRY,
+               ETC
+  		  FROM WELCOME_WEB
+  		  <where>
+  		  	<if test="country != null and country != ''">
+  		  		COUNTRY = #{country}
+  		  	</if>
+  		  </where>
+ 	</select>
+ 	
+ 	<select id="selectLegoKeyRingList" parameterType="WelcomeWebVO" resultType="egovMap">
+		SELECT SEQ_NO,
+			   USER_NAME,
+			   AGE,
+               COUNTRY,
+               ETC
+  		  FROM WELCOME_WEB
+  		  <where>
+  		  	<if test="age = 12">
+  		  		AGE = #{age}
+  		  	</if>
+  		  </where>
+ 	</select>
+ 	
+ 	<select id="selectNikeVaporMaxList" parameterType="egovMap" resultType="egovMap">
+		SELECT SEQ_NO,
+			   USER_NAME,
+			   AGE,
+               COUNTRY,
+               ETC
+  		  FROM WELCOME_WEB
+  		  <where>
+  		  	<if test="etc = '아자!'">
+  		  		ETC = #{etc}
+  		  	</if>
+  		  </where>
+ 	</select>
+ 	
+ 	<select id="selectIcisList" parameterType="Map" resultType="egovMap">
+		SELECT SEQ_NO,
+			   USER_NAME,
+			   AGE,
+               COUNTRY,
+               ETC
+  		  FROM WELCOME_WEB
+  		  <where>
+  		  	<if test="seqNo = 3">
+  		  		SEQ_NO = #{seqNo}
+  		  	</if>
+  		  </where>
+ 	</select>
+ 	
+ 	<select id="selectSheetMusicBestList" parameterType="WelcomeWebVO" resultType="egovMap">
+		SELECT SEQ_NO,
+			   USER_NAME,
+			   AGE,
+               COUNTRY,
+               ETC
+  		  FROM WELCOME_WEB
+  		  <where>
+  		  	<if test="userName = '뿌꾸뿌꾸'">
+  		  		USER_NAME = #{userName}
+  		  	</if>
+  		  </where>
+ 	</select>
+ 	
+ 	<select id="selectseikoAlbaList" parameterType="Map" resultType="egovMap">
+		SELECT SEQ_NO,
+			   USER_NAME,
+			   AGE,
+               COUNTRY,
+               ETC
+  		  FROM WELCOME_WEB
+  		  <where>
+  		  	<if test="age = 13">
+  		  		AGE = #{age}
+  		  	</if>
+  		  </where>
+ 	</select>
+ 	
+ 	<select id="selectXiaomList" parameterType="String" resultType="egovMap">
+		SELECT SEQ_NO,
+			   USER_NAME,
+			   AGE,
+               COUNTRY,
+               ETC
+  		  FROM WELCOME_WEB
+  		  <where>
+  		  	<if test="_parameter = '러시아'">
+  		  		COUNTRY = #{_parameter}
+  		  	</if>
+  		  </where>
+ 	</select>
+ 	
+ 	<select id="selectHuaweiList" parameterType="egovMap" resultType="egovMap">
+		SELECT SEQ_NO,
+			   USER_NAME,
+			   AGE,
+               COUNTRY,
+               ETC
+  		  FROM WELCOME_WEB
+  		  <where>
+  		  	<if test="etc = '해봅시다'">
+  		  		ETC = #{etc}
+  		  	</if>
+  		  </where>
+ 	</select>
+ 	
+ 	<select id="selectMichaelKorsList" parameterType="egovMap" resultType="egovMap">
+		SELECT SEQ_NO,
+			   USER_NAME,
+			   AGE,
+               COUNTRY,
+               ETC
+  		  FROM WELCOME_WEB
+  		  <where>
+  		  	<if test="country = '이태리'">
+  		  		COUNTRY = #{country}
+  		  	</if>
+  		  </where>
+ 	</select>
+ 	
+ 	<select id="selectBalenciagaList" parameterType="String" resultType="egovMap">
+		SELECT SEQ_NO,
+			   USER_NAME,
+			   AGE,
+               COUNTRY,
+               ETC
+  		  FROM WELCOME_WEB
+  		  <where>
+  		  	<if test="_parameter = '한큐'">
+  		  		USER_NAME = #{_parameter}
+  		  	</if>
+  		  </where>
+ 	</select>
+ 	
+</mapper>
